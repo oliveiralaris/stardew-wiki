@@ -1,0 +1,30 @@
+<%- include('../cabecalho')%>
+ 
+    <div>
+        <tr><a href="../npc"> ← Voltar </a></tr>
+        <h3>Alterar Npc</h3>
+
+
+        <form method="post">
+            <p>ID</p>
+            <input type="text" name="id" value="<%=npc.id%>" readonly>
+            <br><br>
+            <p>Nome</p>
+            <input name="nome" type="text" value="<%=npc.nome%>">
+            <br>
+            <p>Aniversário</p>
+            <input name="aniversario" type="text" value="<%=npc.aniversario%>">
+            <br>
+            <p>Presente</p>
+            <input name="presente" type="text" value="<%=npc.presente%>">
+            <br>
+            <p>Dica</p>
+            <input name="dica" type="text" value="<%=npc.dica%>">
+            <br><br>
+            <button type="submit">Adicionar</button>
+            <button type="reset">Cancelar</button>
+        </form>
+    </div>
+    </body>
+
+    </html>

@@ -1,0 +1,50 @@
+<%- include('../cabecalho')%>
+
+    <h3>Itens do Stardew Valley</h3>
+    <p>Gerencie os itens cadastrados na wiki</p>
+    <a href="/item/add">+ Novo Item</a><br><br>
+
+    <table>
+        <tr>
+            <td>
+                <h3>Nome</h3>
+            </td>
+            <td>
+                <h3>Estação</h3>
+            </td>
+            <td>
+                <h3>Onde Encontrar</h3>
+            </td>
+            <td>
+                <h3>Dificuldade</h3>
+            </td>
+            <td>
+                <h3>Ações</h3>
+            </td>
+        </tr>
+        <%items.forEach(item=>{%>
+                <tr>
+                    <td>
+                        <%=item.nome%>
+                    </td>
+                    <td>
+                        <%=item.estacao%>
+                    </td>
+                    <td>
+                        <%=item.onde_encontrar%>
+                    </td>
+                    <td>
+                        <%=item.dificuldade%>
+                    </td>
+                    <td>
+                        <a href="/item/upd/<%=item.id%>">✏️</a>
+                        <a href="/item/del/<%=item.id%>">🗑️</a>
+                    </td>
+                </tr>
+                <%})%>
+       
+        
+    </table>
+</body>
+
+</html>

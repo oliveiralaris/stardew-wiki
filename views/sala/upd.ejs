@@ -1,0 +1,27 @@
+<%- include('../cabecalho')%>
+ 
+    <div>
+        <tr><a href="../sala"> ← Voltar </a></tr>
+        <h3>Alterar sala</h3>
+
+
+        <form method="post">
+            <p>ID</p>
+            <input type="text" name="id" value="<%=sala.id%>" readonly>
+            <br><br>
+            <p>Nome</p>
+            <input name="nome" type="text" value="<%=sala.nome%>">
+            <br>
+            <p>recompensa</p>
+            <input name="recompensa" type="text" value="<%=sala.recompensa%>">
+            <br>
+            <p>Dica</p>
+            <input name="dica" type="text" value="<%=sala.dica%>">
+            <br>
+            <button type="submit">Adicionar</button>
+            <button type="reset">Cancelar</button>
+        </form>
+    </div>
+    </body>
+
+    </html>

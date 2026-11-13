@@ -1,0 +1,49 @@
+<%- include('../cabecalho')%>
+
+    <h3>Npcs do Stardew Valley</h3>
+    <p>Gerencie os npcs cadastrados na wiki</p>
+    <a href="/npc/add">+ Novo Npc</a><br><br>
+
+    <table>
+        <tr>
+            <td>
+                <h3>Nome</h3>
+            </td>
+            <td>
+                <h3>aniversário</h3>
+            </td>
+            <td>
+                <h3>Presente</h3>
+            </td>
+            <td>
+                <h3>Dica</h3>
+            </td>
+            <td>
+                <h3>Ações</h3>
+            </td>
+        </tr>
+          <%npcs.forEach(npc=>{%>
+                <tr>
+                    <td>
+                        <%=npc.nome%>
+                    </td>
+                    <td>
+                        <%=npc.aniversario%>
+                    </td>
+                    <td>
+                        <%=npc.presente%>
+                    </td>
+                    <td>
+                        <%=npc.dica%>
+                    </td>
+                    <td>
+                        <a href="/npc/upd/<%=npc.id%>">✏️</a>
+                        <a href="/npc/del/<%=npc.id%>">🗑️</a>
+                    </td>
+                </tr>
+                <%})%>
+        
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<%- include('../cabecalho')%>
+     
+        <a href="/item"> ← Voltar </a>
+        <h3>Novo Item</h3>
+
+        <form method="post">
+            <p>Nome do Item</p>
+            <input type="text" placeholder="Ex: Morango, Baiacu, Abóbora..." name="nome" required>
+            <br><br>
+
+            <p>Estação</p>
+            <select name="estacao" required>
+                <option value="" disabled selected>Selecione a estação...</option>
+                <option value="Primavera">Primavera</option>
+                <option value="Verão">Verão</option>
+                <option value="Outono">Outono</option>
+                <option value="Inverno">Inverno</option>
+                <option value="Todas">Todas as Estações</option>
+            </select>
+            <br><br>
+
+            <p>Onde Encontrar</p>
+            <input type="text" placeholder="Ex: Armazém do Pierre, Oceano, Minas..." name="encontrar">
+            <br><br>
+
+            <p>Dificuldade</p>
+            <select name="dificuldade" required>
+                <option value="" disabled selected>Selecione a dificuldade...</option>
+                <option value="Fácil">Fácil</option>
+                <option value="Média">Média</option>
+                <option value="Difícil">Difícil</option>
+            </select>
+
+            <br><br>
+            <button type="submit">Adicionar</button>
+            <button type="reset">Cancelar</button>
+        </form>
+</body>
+</html>

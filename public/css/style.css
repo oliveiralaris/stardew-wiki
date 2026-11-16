@@ -1,384 +1,493 @@
-/* Stardew Valley Wiki — tema campestre */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Roboto+Slab:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Roboto+Slab:wght@500;600;700;800&display=swap');
 
 :root {
-    --cream: #fbf7e9;
-    --paper: #fffdf5;
-    --green: #557b45;
-    --green-dark: #345536;
-    --green-light: #e8efdc;
-    --brown: #76533b;
-    --brown-dark: #4d382b;
-    --gold: #d6a84f;
-    --text: #3f4032;
-    --muted: #777765;
-    --line: #e8dfc9;
-    --shadow: 0 8px 24px rgba(77, 56, 43, .09);
+    --forest: #254d3a;
+    --forest-deep: #183b2c;
+    --leaf: #557b50;
+    --leaf-light: #e7f0df;
+    --sage: #a9bf91;
+    --gold: #e0b65f;
+    --cream: #f7f5e9;
+    --paper: #fffef8;
+    --paper-alt: #f4f1e4;
+    --ink: #303d31;
+    --muted: #788174;
+    --line: #e4e1d1;
+    --shadow: 0 12px 30px rgba(41, 59, 39, .09);
+    --shadow-soft: 0 4px 14px rgba(41, 59, 39, .07);
+    --radius: 16px
 }
 
 * {
-    box-sizing: border-box;
+    box-sizing: border-box
 }
 
 html {
     min-height: 100%;
     background: var(--cream);
+    scroll-behavior: smooth
 }
 
 body {
-    --page-gutter: clamp(18px, 3.2vw, 52px);
     width: 100%;
-    max-width: none;
+    max-width: 1480px;
     min-height: 100vh;
-    margin: 0;
-    padding: 0 var(--page-gutter) 56px;
-    color: var(--text);
-    font-family: 'Nunito', sans-serif;
-    font-size: 16px;
-    line-height: 1.65;
-    background:
-        radial-gradient(ellipse at 8% 5%, rgba(214, 168, 79, .10), transparent 28%),
-        radial-gradient(ellipse at 95% 20%, rgba(85, 123, 69, .09), transparent 30%),
-        var(--cream);
+    margin: 0 auto;
+    padding: 0 34px 64px;
+    color: var(--ink);
+    font: 15px/1.65 'Nunito', sans-serif;
+    background: radial-gradient(ellipse at 8% 18%, rgba(224, 182, 95, .13), transparent 25%), radial-gradient(ellipse at 92% 38%, rgba(85, 123, 80, .10), transparent 28%), var(--cream)
 }
 
 .site-header {
-    margin: 0 calc(-1 * var(--page-gutter)) 38px;
-    padding: 20px var(--page-gutter);
-    background: var(--green-dark);
+    position: relative;
+    margin: 0 -34px 42px;
+    padding: 22px 34px 18px;
+    color: #fffdf2;
+    background: radial-gradient(circle at 88% 0%, rgba(169, 191, 145, .16), transparent 24%), linear-gradient(115deg, var(--forest-deep), var(--forest) 68%, #376447);
     border-bottom: 5px solid var(--gold);
-    box-shadow: 0 5px 18px rgba(52, 85, 54, .18);
+    box-shadow: 0 7px 22px rgba(24, 59, 44, .18)
 }
 
 .site-brand {
-    max-width: 1600px;
-    margin: 0 auto 12px;
-    color: #fff8e8;
-    font-family: 'Roboto Slab', serif;
-    font-size: 25px;
-    font-weight: 700;
-    letter-spacing: .3px;
+    max-width: 1320px;
+    margin: 0 auto 14px;
+    color: #fffdf2;
+    font: 800 clamp(23px, 3vw, 30px) 'Roboto Slab', serif;
+    letter-spacing: .2px;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, .14)
 }
 
 .site-nav {
-    width: min(100%, 1600px);
+    width: min(100%, 1320px);
     margin: 0 auto;
     border-collapse: separate;
-    border-spacing: 8px 0;
+    border-spacing: 7px 0
 }
 
 .site-nav td {
     padding: 0;
     border: 0;
-    text-align: center;
+    text-align: center
 }
 
 .site-nav a {
     display: block;
-    padding: 9px 15px;
-    color: #fdf8e9;
-    font-weight: 800;
+    padding: 10px 16px;
+    color: #f8f7e9;
+    font-size: 14px;
+    font-weight: 900;
     text-decoration: none;
-    border-radius: 9px;
-    transition: background .2s ease, transform .2s ease;
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .055);
+    transition: .2s
 }
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
     color: white;
-    background: rgba(255, 255, 255, .15);
+    background: rgba(255, 255, 255, .16);
+    border-color: rgba(255, 255, 255, .28);
     transform: translateY(-2px);
-    outline: none;
+    outline: none
 }
 
-h2, h3 {
-    color: var(--brown-dark);
+h2,
+h3 {
+    color: var(--forest-deep);
     font-family: 'Roboto Slab', serif;
-    line-height: 1.3;
+    line-height: 1.3
 }
 
 h2 {
     margin: 0 0 14px;
-    font-size: clamp(27px, 4vw, 36px);
+    font-size: clamp(27px, 3.4vw, 36px);
+    letter-spacing: -.4px
 }
 
 h3 {
     margin: 28px 0 12px;
-    font-size: 22px;
+    font-size: clamp(20px, 2.4vw, 24px)
 }
 
 p {
-    max-width: 850px;
-    margin: 0 0 17px;
+    max-width: 900px;
+    margin: 0 0 17px
 }
 
 a {
-    color: var(--green);
+    color: var(--leaf);
     font-weight: 800;
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
+    transition: color .18s
 }
 
 a:hover {
-    color: var(--brown);
+    color: var(--forest-deep)
 }
 
-body > p,
-body > h2,
-body > h3,
-body > form,
-body > table:not(.site-nav),
-body > a,
-body > div {
-    animation: appear .35s ease both;
+body>h2,
+body>h3,
+body>p,
+body>form,
+body>table:not(.site-nav),
+body>a,
+body>div {
+    animation: rise-in .35s ease both
 }
 
-body > p {
-    max-width: 900px;
+body>h2 {
+    position: relative;
+    padding-bottom: 13px
 }
 
-body > h2 + p {
-    padding: 20px 22px;
+body>h2:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 66px;
+    height: 4px;
+    border-radius: 10px;
+    background: var(--gold)
+}
+
+body>h2+p {
+    max-width: 980px;
+    padding: 21px 24px;
+    color: #485747;
     background: var(--paper);
     border: 1px solid var(--line);
-    border-left: 5px solid var(--green);
-    border-radius: 12px;
-    box-shadow: var(--shadow);
+    border-left: 5px solid var(--leaf);
+    border-radius: 13px;
+    box-shadow: var(--shadow-soft)
 }
 
-body > h3 + p {
-    color: var(--muted);
-}
-
-body > h3:has(+ p) {
-    margin-top: 28px;
-}
-
-body > h3:has(+ p) + p {
+body>h3+p {
+    max-width: 980px;
     padding: 17px 20px;
-    background: #f2ead5;
-    border: 1px solid #e5d7b8;
-    border-radius: 12px;
+    color: #645b43;
+    background: linear-gradient(120deg, #fbf2d9, #fffaf0);
+    border: 1px solid #eadcb8;
+    border-radius: 13px;
+    box-shadow: var(--shadow-soft)
 }
 
-body > a[href$="/add"] {
+body>a[href$="/add"] {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-    padding: 10px 17px;
+    justify-content: center;
+    gap: 8px;
+    margin: 2px 0 14px;
+    padding: 11px 18px;
     color: white;
-    background: var(--green);
-    border-radius: 9px;
+    background: linear-gradient(135deg, #638a55, #426e45);
+    border: 1px solid #426e45;
+    border-radius: 10px;
+    box-shadow: 0 4px 0 #31553a, 0 7px 15px rgba(49, 85, 58, .13);
     text-decoration: none;
-    box-shadow: 0 4px 0 #3d6034;
-    transition: transform .15s ease, background .15s ease;
+    transition: .18s
 }
 
-body > a[href$="/add"]:hover {
-    background: var(--green-dark);
-    transform: translateY(-1px);
+body>a[href$="/add"]:hover {
+    color: white;
+    filter: brightness(1.06);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #31553a, 0 10px 18px rgba(49, 85, 58, .16)
 }
 
-body > a[href*="item"],
-body > a[href*="npc"],
-body > a[href*="sala"] {
-    display: inline-block;
-    margin: 5px 0 12px;
+body>a[href^="../"],
+body>a[href^="/"] {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 0 10px;
+    padding: 8px 12px;
+    color: var(--forest);
+    background: var(--leaf-light);
+    border: 1px solid #d4e2c9;
+    border-radius: 9px;
+    text-decoration: none
+}
+
+body>a[href^="../"]:hover,
+body>a[href^="/"]:hover {
+    color: var(--forest-deep);
+    background: #dce9d2
 }
 
 table:not(.site-nav) {
     width: 100%;
-    margin: 18px 0 30px;
+    margin: 18px 0 32px;
     overflow: hidden;
+    color: var(--ink);
     background: var(--paper);
     border: 1px solid var(--line);
     border-collapse: separate;
     border-spacing: 0;
-    border-radius: 13px;
-    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow)
 }
 
 table:not(.site-nav) tr:first-child {
     color: white;
-    background: var(--green-dark);
+    background: linear-gradient(100deg, var(--forest-deep), var(--forest))
 }
 
 table:not(.site-nav) tr:first-child td {
+    padding-top: 15px;
+    padding-bottom: 15px;
     color: white;
-    font-weight: 800;
+    font-weight: 900;
+    letter-spacing: .2px
 }
 
 table:not(.site-nav) td {
-    padding: 13px 15px;
+    padding: 14px 16px;
     border-bottom: 1px solid var(--line);
     text-align: left;
-    vertical-align: middle;
+    vertical-align: middle
 }
 
 table:not(.site-nav) tr:last-child td {
-    border-bottom: 0;
+    border-bottom: 0
 }
 
 table:not(.site-nav) tr:nth-child(even):not(:first-child) {
-    background: #f7f3e7;
+    background: #faf8ef
 }
 
 table:not(.site-nav) tr:hover:not(:first-child) {
-    background: var(--green-light);
+    background: #edf3e6
 }
 
 table:not(.site-nav) td h3 {
     margin: 0;
     color: white;
-    font-family: 'Nunito', sans-serif;
-    font-size: 14px;
+    font: 900 13px 'Nunito', sans-serif
 }
 
 table:not(.site-nav) td a {
-    display: inline-block;
-    margin-right: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    margin: 0 4px 0 0;
+    color: var(--forest);
+    background: var(--leaf-light);
+    border: 1px solid #d9e5d1;
+    border-radius: 9px;
+    font-size: 16px;
     text-decoration: none;
-    font-size: 18px;
+    transition: .18s
+}
+
+table:not(.site-nav) td a:hover {
+    color: var(--forest-deep);
+    background: #dce9d2;
+    transform: translateY(-2px)
 }
 
 form {
-    max-width: 620px;
+    width: min(100%, 700px);
     margin: 18px 0 35px;
-    padding: 25px 28px;
+    padding: 28px 30px;
     background: var(--paper);
     border: 1px solid var(--line);
-    border-radius: 15px;
-    box-shadow: var(--shadow);
+    border-radius: 18px;
+    box-shadow: var(--shadow)
 }
 
 form p {
-    margin: 12px 0 5px;
-    color: var(--brown-dark);
-    font-weight: 800;
+    margin: 15px 0 6px;
+    color: var(--forest-deep);
+    font-size: 13px;
+    font-weight: 900
+}
+
+form p:first-child {
+    margin-top: 0
 }
 
 input,
 select,
 textarea {
     width: 100%;
-    min-height: 44px;
-    padding: 10px 13px;
-    color: var(--text);
+    min-height: 46px;
+    padding: 11px 14px;
+    color: var(--ink);
     background: #fffefa;
-    border: 1px solid #d9cfb8;
-    border-radius: 8px;
+    border: 1px solid #d8d9c9;
+    border-radius: 9px;
     font: inherit;
     outline: none;
-    transition: border-color .2s ease, box-shadow .2s ease;
+    transition: .2s
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #a0a393
 }
 
 input:focus,
 select:focus,
 textarea:focus {
-    border-color: var(--green);
-    box-shadow: 0 0 0 3px rgba(85, 123, 69, .14);
+    background: white;
+    border-color: var(--leaf);
+    box-shadow: 0 0 0 4px rgba(85, 123, 80, .13)
 }
 
 input[readonly] {
     color: var(--muted);
-    background: #f1eee5;
+    background: var(--paper-alt);
+    border-style: dashed
 }
 
 button {
-    min-height: 42px;
-    margin: 12px 8px 0 0;
-    padding: 9px 18px;
+    min-height: 44px;
+    margin: 14px 8px 0 0;
+    padding: 10px 19px;
     color: white;
-    background: var(--green);
+    background: linear-gradient(135deg, #638a55, #426e45);
     border: 0;
-    border-radius: 8px;
-    font: inherit;
-    font-weight: 800;
+    border-radius: 10px;
+    box-shadow: 0 4px 0 #31553a;
+    font: 900 15px 'Nunito', sans-serif;
     cursor: pointer;
-    transition: background .2s ease, transform .2s ease;
+    transition: .18s
 }
 
 button:hover {
-    background: var(--green-dark);
-    transform: translateY(-1px);
+    color: white;
+    filter: brightness(1.06);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #31553a
 }
 
-button[type="reset"] {
-    color: var(--brown-dark);
-    background: #eee6d5;
+button[type=reset] {
+    color: #65583e;
+    background: #f0e8d4;
+    box-shadow: 0 4px 0 #d8c9a8
 }
 
-button[type="reset"]:hover {
-    background: #e3d6bd;
+button[type=reset]:hover {
+    color: #4d422d;
+    background: #e8ddc2;
+    box-shadow: 0 6px 0 #d0bf9a
 }
 
-form + a,
-body > a[href^="../"],
-body > a[href^="/"] {
-    display: inline-block;
-    margin: 12px 0;
+form+a {
+    display: inline-flex;
+    margin: 10px 0
 }
 
-@keyframes appear {
-    from { opacity: 0; transform: translateY(6px); }
-    to { opacity: 1; transform: translateY(0); }
+@keyframes rise-in {
+    from {
+        opacity: 0;
+        transform: translateY(7px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
 }
 
-@media (max-width: 700px) {
+@media(max-width:760px) {
     body {
-        --page-gutter: 16px;
-        padding: 0 var(--page-gutter) 35px;
+        padding: 0 17px 40px
     }
 
     .site-header {
-        margin: 0 calc(-1 * var(--page-gutter)) 28px;
-        padding: 17px var(--page-gutter);
+        margin: 0 -17px 30px;
+        padding: 18px 17px 15px
     }
 
     .site-brand {
         text-align: center;
-        font-size: 21px;
+        font-size: 23px
     }
 
     .site-nav {
         display: block;
-        border-spacing: 4px;
+        border-spacing: 4px
     }
 
     .site-nav tr {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 4px;
+        gap: 5px
     }
 
     .site-nav td {
-        flex: 1 1 42%;
+        flex: 1 1 42%
     }
 
     .site-nav a {
-        padding: 8px 6px;
-        font-size: 14px;
+        height: 100%;
+        padding: 9px 7px;
+        font-size: 13px
     }
 
     table:not(.site-nav) {
         display: block;
         overflow-x: auto;
-        white-space: nowrap;
+        white-space: nowrap
     }
 
     table:not(.site-nav) td {
-        padding: 11px 12px;
+        padding: 12px 13px
     }
 
     form {
-        padding: 20px 17px;
+        padding: 22px 18px;
+        border-radius: 14px
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+@media(max-width:420px) {
+    body {
+        padding-right: 12px;
+        padding-left: 12px
+    }
+
+    .site-header {
+        margin-right: -12px;
+        margin-left: -12px
+    }
+
+    .site-brand {
+        font-size: 20px
+    }
+
+    h2 {
+        font-size: 25px
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+    *,
+    *:before,
+    *:after {
         animation-duration: .01ms !important;
         transition-duration: .01ms !important;
+        scroll-behavior: auto !important
     }
+}
+
+/* Mantém os links de criação como botões de destaque */
+body>a[href$="/add"] {
+    color: #fff;
+    background: linear-gradient(135deg, #638a55, #426e45);
+    border-color: #426e45;
+}
+
+body>a[href$="/add"]:hover {
+    color: #fff;
+    background: linear-gradient(135deg, #638a55, #426e45);
 }

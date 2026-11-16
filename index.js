@@ -68,6 +68,7 @@ app.get('/npc/del/:id',  async (req, res) => {
  res.render("npc/lst", {npcs});
 })
 
+
 //SALA
 app.get('/sala', async (req, res) => {
     const salas = await Sala.find()
@@ -113,10 +114,12 @@ app.get('/item/del/:id',  async (req, res) => {
 })
 
 app.get('/item',  async (req, res) => {
- //listar espécies
- const items = await Item.find()
  res.render("item/lst", {items});
-
+  const { pesquisar } = req.body;
+  const items = await Item.find({
+    nome: new RegExp(pesquisar, 'i')
+  });
+  res.render("item/lst", { items });
 })
 
 app.get('/item/upd/:id', async (req, res) => {

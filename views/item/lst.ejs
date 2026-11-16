@@ -4,6 +4,12 @@
     <p>Gerencie os itens cadastrados na wiki</p>
     <a href="/item/add">+ Novo Item</a><br><br>
 
+    <form method="post">
+        <input type="text" name="pesquisar" placeholder="Nome do item">
+        <input type="submit" value="Buscar">
+    </form>
+
+
     <table>
         <tr>
             <td>
@@ -23,28 +29,28 @@
             </td>
         </tr>
         <%items.forEach(item=>{%>
-                <tr>
-                    <td>
-                        <%=item.nome%>
-                    </td>
-                    <td>
-                        <%=item.estacao%>
-                    </td>
-                    <td>
-                        <%=item.onde_encontrar%>
-                    </td>
-                    <td>
-                        <%=item.dificuldade%>
-                    </td>
-                    <td>
-                        <a href="/item/upd/<%=item.id%>">✏️</a>
-                        <a href="/item/del/<%=item.id%>">🗑️</a>
-                    </td>
-                </tr>
-                <%})%>
-       
-        
-    </table>
-</body>
+            <tr>
+                <td>
+                    <%=item.nome%>
+                </td>
+                <td>
+                    <%=item.estacao%>
+                </td>
+                <td>
+                    <%=item.onde_encontrar%>
+                </td>
+                <td>
+                    <%=item.dificuldade%>
+                </td>
+                <td>
+                    <a href="/item/upd/<%=item.id%>">✏️</a>
+                    <a href="/item/del/<%=item.id%>">🗑️</a>
+                </td>
+            </tr>
+            <%})%>
 
-</html>
+
+    </table>
+    </body>
+
+    </html>

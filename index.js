@@ -114,7 +114,14 @@ app.get('/item/del/:id',  async (req, res) => {
 })
 
 app.get('/item',  async (req, res) => {
+ //listar espécies
+ const items = await Item.find()
  res.render("item/lst", {items});
+
+})
+
+//rota para pesquisar item por nome
+app.post('/item/lst', async (req, res) => {
   const { pesquisar } = req.body;
   const items = await Item.find({
     nome: new RegExp(pesquisar, 'i')
@@ -146,6 +153,7 @@ app.post('/item/add',  async (req, res) => {
     await Item.create({nome, estacao, onde_encontrar, dificuldade})
     res.render("item/add");
 })
+
 
 app.listen(PORT, () => {
     console.log(`servidor rodando em http://localhost:${PORT}`);

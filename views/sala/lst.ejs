@@ -1,39 +1,50 @@
 <%- include('../cabecalho')%>
 
-        <h3>Salas do Stardew Valley</h3>
-        <p>Gerencie as salas cadastradas na wiki</p>
-        <a href="/sala/add">+ Nova Sala</a><br><br>
+    <h3>Salas do Stardew Valley</h3>
+    <p>Gerencie as salas cadastradas na wiki</p>
+    <a href="/sala/add">+ Nova Sala</a><br><br>
 
-        <table>
+
+    <form method="post" action="/sala/lst">
+        <a href="/sala"> ← Voltar </a>
+        <input type="text" name="pesquisar" placeholder="Nome da sala">
+        <input type="submit" value="Buscar">
+    </form>
+
+    <table>
+        <tr>
+            <td>
+                <h3>Nome</h3>
+            </td>
+            <td>
+                <h3>Recompensa</h3>
+            </td>
+            <td>
+                <h3>Dica</h3>
+            </td>
+            <td>
+                <h3>Ações</h3>
+            </td>
+        </tr>
+
+        <%salas.forEach(sala=>{%>
             <tr>
-                <td><h3>Nome</h3></td>
-                <td><h3>Recompensa</h3></td>
                 <td>
-                    <h3>Dica</h3>
+                    <%=sala.nome%>
                 </td>
                 <td>
-                    <h3>Ações</h3>
+                    <%=sala.recompensa%>
+                </td>
+                <td>
+                    <%=sala.dica%>
+                </td>
+                <td>
+                    <a href="/sala/upd/<%=sala.id%>">✏️</a>
+                    <a href="/sala/del/<%=sala.id%>">🗑️</a>
                 </td>
             </tr>
-
-            <%salas.forEach(sala=>{%>
-                <tr>
-                    <td>
-                        <%=sala.nome%>
-                    </td>
-                    <td>
-                        <%=sala.recompensa%>
-                    </td>
-                    <td>
-                        <%=sala.dica%>
-                    </td>
-                    <td>
-                        <a href="/sala/upd/<%=sala.id%>">✏️</a>
-                        <a href="/sala/del/<%=sala.id%>">🗑️</a>
-                    </td>
-                </tr>
-                <%})%>
-        </table>
+            <%})%>
+    </table>
     </div>
     </body>
 

@@ -4,6 +4,13 @@
     <p>Gerencie os npcs cadastrados na wiki</p>
     <a href="/npc/add">+ Novo Npc</a><br><br>
 
+
+    <form method="post" action="/npc/lst">
+        <a href="/npc"> ← Voltar </a>
+        <input type="text" name="pesquisar" placeholder="Nome do npc">
+        <input type="submit" value="Buscar">
+    </form>
+
     <table>
         <tr>
             <td>
@@ -22,28 +29,28 @@
                 <h3>Ações</h3>
             </td>
         </tr>
-          <%npcs.forEach(npc=>{%>
-                <tr>
-                    <td>
-                        <%=npc.nome%>
-                    </td>
-                    <td>
-                        <%=npc.aniversario%>
-                    </td>
-                    <td>
-                        <%=npc.presente%>
-                    </td>
-                    <td>
-                        <%=npc.dica%>
-                    </td>
-                    <td>
-                        <a href="/npc/upd/<%=npc.id%>">✏️</a>
-                        <a href="/npc/del/<%=npc.id%>">🗑️</a>
-                    </td>
-                </tr>
-                <%})%>
-        
-    </table>
-</body>
+        <%npcs.forEach(npc=>{%>
+            <tr>
+                <td>
+                    <%=npc.nome%>
+                </td>
+                <td>
+                    <%=npc.aniversario%>
+                </td>
+                <td>
+                    <%=npc.presente%>
+                </td>
+                <td>
+                    <%=npc.dica%>
+                </td>
+                <td>
+                    <a href="/npc/upd/<%=npc.id%>">✏️</a>
+                    <a href="/npc/del/<%=npc.id%>">🗑️</a>
+                </td>
+            </tr>
+            <%})%>
 
-</html>
+    </table>
+    </body>
+
+    </html>

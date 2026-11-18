@@ -25,6 +25,16 @@ app.get('/', (req, res) => {
 })
 
 //NPC
+
+//rota para pesquisar npc por nome
+app.post('/npc/lst', async (req, res) => {
+  const { pesquisar } = req.body;
+  const npcs = await Npc.find({
+    nome: new RegExp(pesquisar, 'i')
+  });
+  res.render("npc/lst", { npcs });
+})
+
 app.get('/npc', async (req, res) => {
     const npcs = await Npc.find()
     res.render("npc/lst", {npcs});
@@ -70,6 +80,15 @@ app.get('/npc/del/:id',  async (req, res) => {
 
 
 //SALA
+//rota para pesquisar sala por nome
+app.post('/sala/lst', async (req, res) => {
+  const { pesquisar } = req.body;
+  const salas = await Sala.find({
+    nome: new RegExp(pesquisar, 'i')
+  });
+  res.render("sala/lst", { salas });
+})
+
 app.get('/sala', async (req, res) => {
     const salas = await Sala.find()
     res.render("sala/lst", {salas});

@@ -2,6 +2,11 @@ import express from 'express'
 const app = express();
 const PORT = 3000;
 
+import multer from 'multer';
+
+const storage = multer.memoryStorage();
+const upload = multer({ storage });
+
 app.use(express.urlencoded({ extended: true }))
 app.set('view engine', 'ejs')
 
@@ -167,9 +172,12 @@ app.post('/item/upd/:id',  async (req, res) => {
 })
 
 //Rota POST pra gravar no Banco de Dados
-app.post('/item/add',  async (req, res) => {
+app.post('/item/add', upload.single('foto'),  async (req, res) => {
     const {nome,estacao, onde_encontrar, dificuldade} = req.body
-    await Item.create({nome, estacao, onde_encontrar, dificuldade})
+    let foto
+    if(req.file) foto = req.file.buffer
+
+    await Item.create({nome, estacao, onde_encontrar, dificuldade, foto})
     res.render("item/add");
 })
 

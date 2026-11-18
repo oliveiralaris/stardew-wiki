@@ -3,7 +3,10 @@
     <a href="/item"> ← Voltar </a>
     <h3>Novo Item</h3>
 
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
+        <p>Foto do Item</p>
+        <input type="file" name="foto" accept="image/png">
+        <br><br>
         <p>Nome do Item</p>
         <input type="text" placeholder="Ex: Morango, Baiacu, Abóbora..." name="nome" required>
         <br><br>
